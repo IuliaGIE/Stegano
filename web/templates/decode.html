@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decode Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Decode Image</h1>
+    <form action="/image/decode" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required><br><br>
+        <input type="submit" value="Decode">
+    </form>
+    <br>
+    {% if message %}
+    <h3>Decoded Message:</h3>
+    <pre>{{ message }}</pre>
+    {% endif %}
+</body>
+</html>
